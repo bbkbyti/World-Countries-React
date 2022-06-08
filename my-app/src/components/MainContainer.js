@@ -1,6 +1,7 @@
 
 import axios from 'axios';
 import React, { useState, useEffect } from 'react'
+import AllCountries from './AllCountries';
 
 export default function MainContainer() {
     const [countries, setCountries] = useState([]);
@@ -14,16 +15,9 @@ export default function MainContainer() {
         fetchCountries();
     }, [])
 
-
-
     return (
         <div>
-            {countries.map((country) => (
-                <div>
-                    <img src={country.flags.png} alt={country.name.common}/>
-                    <p>{country.name.common}</p>
-                </div>
-            ))}
+            <AllCountries countries={countries} />
         </div>
 
     )
