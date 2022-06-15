@@ -7,10 +7,9 @@ import MainContainer from './components/MainContainer';
 function App() {
   return (
     <div className="App">
-      <Routes>
-        <Route path='/' element={<MainContainer />} />
-      </Routes>
-
+      <div>
+        <MainContainer /> 
+      </div>
     </div>
   );
 }

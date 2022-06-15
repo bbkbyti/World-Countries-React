@@ -1,7 +1,13 @@
 
+
 import axios from 'axios';
 import React, { useState, useEffect } from 'react'
+import { Routes, Route } from 'react-router-dom';
+
+
 import AllCountries from './AllCountries';
+import FilterCountriesByContinent from './FilterCountriesByContinent';
+
 
 export default function MainContainer() {
     const [countries, setCountries] = useState([]);
@@ -17,7 +23,10 @@ export default function MainContainer() {
 
     return (
         <div>
-            <AllCountries countries={countries} />
+            <Routes>
+                {/* <FilterCountriesByContinent countries={countries} /> */}
+                <Route exact path='/' element={<AllCountries countries={countries} />} />
+            </Routes>
         </div>
 
     )
